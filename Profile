@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full-Screen Background Video</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Unmute Button and Note */
+        .unmute-container {
+            position: absolute;
+            bottom: 20px;
+            right: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px; /* Space between button and text */
+        }
+
+        #unmute-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            background-color: #ffcc00;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #unmute-button:hover {
+            background-color: #ffaa00;
+        }
+
+        .unmute-text {
+            font-size: 13px;
+            color: white;
+            font-weight: bold;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Video Background -->
+    <video id="background-video" autoplay loop>
+        <source src="video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+    </nav> 
+
+    <!-- Banner Area -->
+    <div class="banner-area">
+        <a href="subscribe.html" class="btn">Subscribe</a>
+    </div>
+
+    <!-- Unmute Button + Note -->
+    <div class="unmute-container">
+        <button id="unmute-button">🔊 Unmute</button>
+        <span class="unmute-text">Click for audio</span>
+    </div>
+
+    <script>
+        document.getElementById("unmute-button").addEventListener("click", function() {
+            let video = document.getElementById("background-video");
+            video.muted = false;
+            video.play();
+            document.querySelector(".unmute-container").style.display = "none"; // Hide both button & text
+        });
+    </script>
+
+</body>
+</html>
