@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscribe to Facebook</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Video Background */
+        #background-video {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+            object-fit: cover;
+        }
+
+        /* Center Content */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        /* Transparent Buttons */
+        .button {
+            display: inline-block;
+            padding: 12px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            border: 2px solid white;
+            background: transparent;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.3s ease;
+            margin: 10px;
+        }
+
+        /* Hover Effect */
+        .button:hover {
+            background-color: white;
+            color: black;
+        }
+
+        /* Home Button (Upper Left) */
+        .home-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        /* Subscribe Button with Facebook Logo */
+        .subscribe-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 20px;
+            font-size: 18px;
+            color: white;
+            border: 2px solid white;
+            background: transparent;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.3s ease;
+        }
+
+        .subscribe-btn img {
+            width: 50px; /* Adjust size */
+            height: auto;
+        }
+
+        .subscribe-btn:hover {
+            background-color: white;
+            color: black;
+        }
+
+        /* Unmute Button */
+        #unmute-button {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            background-color: #ffcc00;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #unmute-button:hover {
+            background-color: #ffaa00;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Video Background -->
+    <video id="background-video" autoplay loop muted>
+        <source src="svideo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Home Button -->
+    <a href="index.html" class="button home-btn">🏠 Home</a>
+
+    <!-- Subscribe Button with Facebook Logo -->
+    <a href="https://www.facebook.com/profile.php?id=100067152630495" target="_blank" class="subscribe-btn">
+        <img src="facebook.png" alt="Facebook Logo"> Subscribe
+    </a>
+
+    <!-- Unmute Button -->
+    <button id="unmute-button">🔊 Unmute</button>
+
+    <script>
+        document.getElementById("unmute-button").addEventListener("click", function() {
+            let video = document.getElementById("background-video");
+            video.muted = false;
+            video.play();
+            this.style.display = "none"; // Hide button after unmuting
+        });
+    </script>
+
+</body>
+</html>

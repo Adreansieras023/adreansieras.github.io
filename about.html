@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <style>
+        /* Reset default margins & padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Video Background */
+        #background-video {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+            object-fit: cover;
+        }
+
+        /* Navigation Bar */
+        nav {
+            position: absolute;
+            width: 100%;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            font-size: 20px;
+            color: #fff;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-family: Poppins, sans-serif;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ffcc00;
+        }
+
+        /* Body */
+        body {
+            color: white;
+            text-align: center;
+            padding-top: 100px; /* Offset for fixed navbar */
+            font-family: Arial, sans-serif;
+        }
+
+        /* Profile Sections */
+        .profile-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(34, 34, 34, 0.8); /* Semi-transparent background */
+            padding: 30px;
+            margin: 50px auto;
+            width: 80%;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+        }
+
+        .profile-image {
+            width: 45%; /* Adjust the width as needed */
+            max-width: 400px; /* Ensure the image doesn't exceed this width */
+            height: auto;
+            border-radius: 15px;
+            margin-right: 20px;
+            border: 4px solid white;
+        }
+
+        .profile-text {
+            width: 55%; /* Adjust the width as needed */
+            text-align: left;
+        }
+
+        .profile-text h1 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .profile-text p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .profile-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .profile-image {
+                margin: 0 auto 15px;
+                width: 80%; /* Adjust for smaller screens */
+            }
+
+            .profile-text {
+                width: 100%;
+                text-align: center;
+            }
+
+            nav {
+                width: 100%;
+                left: 0;
+                justify-content: space-around;
+            }
+
+            nav a {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Video -->
+    <video id="background-video" autoplay loop muted>
+        <source src="svideo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <!-- About Section -->
+    <div class="profile-container">
+        <img src="me.jpg" alt="Your Profile Picture" class="profile-image">
+        <div class="profile-text">
+            <h1>About Me</h1>
+            <p>
+                I pride myself on being a hardworking and ethical person.
+                I believe in treating others with respect and kindness,
+                and I'm always striving to improve myself both personally and professionally.
+                My work ethic is driven by a desire to achieve meaningful results and
+                contribute to something larger than myself.
+            </p>
+        </div>
+    </div>
+
+    <!-- Hobbies Section -->
+    <div class="profile-container">
+        <img src="hobbies.jpg" alt="Hobby Picture" class="profile-image">
+        <div class="profile-text">
+            <h1>My Hobby</h1>
+            <p>
+                Over the past year, embracing cycling as a regular activity has profoundly impacted both my physical health and overall well-being. Engaging in this low-impact aerobic exercise has not only enhanced my cardiovascular fitness but also contributed to effective weight management and increased muscle strength. 
+            </p>
+        </div>
+    </div>
+
+    <!-- Job Section -->
+    <div class="profile-container">
+        <img src="mcdo.jpg" alt="Job Picture" class="profile-image">
+        <div class="profile-text">
+            <h1>My Job</h1>
+            <p>
+                Throughout the past three years, I have diligently balanced my academic pursuits with a part-time role as a service crew member. This experience was driven by a commitment to financially support my education and alleviate the burden on my family.
+                <br><br>
+                In my role, I honed essential skills such as customer service, teamwork, and adaptability. Managing responsibilities both at work and in my studies required meticulous time management and unwavering dedication. This journey not only provided financial stability but also enriched my personal growth, instilling a strong work ethic and resilience.
+                <br><br>
+                This balance between work and academics has prepared me to tackle future challenges with confidence and perseverance.
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>
